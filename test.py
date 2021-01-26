@@ -7,7 +7,7 @@ headers = {'User-Agent':
                         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
                     'Accept-Language': 'en-US, en;q=0.5'}
 
-URL = "https://m.en.aruodas.lt/butai-vilniuje-zveryne-kestucio-g-esate-aplinkos-kokybei-reiklus-zmogus-tad-1-2850445/"
+URL = "https://en.aruodas.lt/butai-vilniuje-zveryne-kestucio-g-esate-aplinkos-kokybei-reiklus-zmogus-tad-1-2850445/"
 page = requests.get(URL, headers=headers)
 
 soup = BeautifulSoup(page.content, "html.parser")
@@ -34,3 +34,9 @@ required_data = ['Area', 'Build year', 'Building type', 'Equipment', 'Floor', 'H
 clean_df.filter(required_data)
 
 pickle.dump(clean_df, open("flat_info.pkl", "wb"))
+
+address = soup.find("h1")
+print(address.text)
+
+price = soup.find("span", class_='price-eur')
+print(price.text)
