@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-pd.options.mode.chained_assignment = None
 
+pd.options.mode.chained_assignment = None
 import pickle
 import re
 import time
@@ -10,7 +10,6 @@ import time
 
 class Scraper:
     def __init__(self):
-        # Placeholder dataframes to hold listing and category data
         self.df = pd.DataFrame()
 
     def get_soup(self, url):
@@ -24,6 +23,46 @@ class Scraper:
         page = requests.get(url, headers=headers)
 
         return BeautifulSoup(page.content, "html.parser")
+
+    def encode_data(self):
+        self.df = self.df.astype(
+            {
+                "Area": "float64",
+                "Build year": "int64",
+                "Floor": "int64",
+                "No. of floors": "int64",
+                "Renovation year": "int64",
+                "price": "float64",
+                "Number of rooms ": "int64",
+            }
+        )
+
+        self.encoded_df = self.df[
+            [
+                "Area",
+                "Build year",
+                "Floor",
+                "No. of floors",
+                "Number of rooms ",
+                "Renovation year",
+                "price",
+            ]
+        ]
+
+        categorical_values = pd.get_dummies(
+            self.df[
+                [
+                    "Building type",
+                    "Equipment",
+                    "Heating system",
+                    "city",
+                    "region",
+                    "street",
+                ]
+            ]
+        )
+
+        encoded_df = encoded_df.join(categorical_values)
 
     def extract_info(self, soup):
         info = soup.find_all("dl")
@@ -54,22 +93,22 @@ class Scraper:
         ]
 
         clean_df = clean_df.filter(required_data)
-        
+
         clean_df["Area"] = clean_df["Area"].str.findall(r"(\d+)")
-        clean_df["Area"] = float(".".join(clean_df['Area'].iloc[0]))
-        
+        clean_df["Area"] = ".".join(clean_df["Area"].iloc[0])
+
         clean_df["Build year"] = clean_df["Build year"].str.findall(r"(\d+)")
-        
-        clean_df['Renovation year'] = 0
-        if len(clean_df['Build year'].iloc[0]) == 2:
-            clean_df['Renovation year'].iloc[0] = int(clean_df['Build year'].iloc[0][1])
-            clean_df['Build year'].iloc[0] = int(clean_df['Build year'].iloc[0][0])
+
+        clean_df["Renovation year"] = 0
+        if len(clean_df["Build year"].iloc[0]) == 2:
+            clean_df["Renovation year"].iloc[0] = clean_df["Build year"].iloc[0][1]
+            clean_df["Build year"].iloc[0] = clean_df["Build year"].iloc[0][0]
         else:
-            clean_df['Build year'].iloc[0] = int(clean_df['Build year'].iloc[0][0])
+            clean_df["Build year"].iloc[0] = clean_df["Build year"].iloc[0][0]
 
         price = soup.find("span", class_="main-price")
         price = re.findall("\d+", price.text)
-        clean_df["price"] = float("".join(price))
+        clean_df["price"] = "".join(price)
 
         address = soup.find("h1")
         address = address.text.split(",")
