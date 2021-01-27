@@ -1,39 +1,89 @@
 from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+import pickle
+import re
+import time
 
 class Scraper:
     def __init__(self):
         # Placeholder dataframes to hold listing and category data
         self.df = pd.DataFrame()
 
-    def collect_information(self, no_of_examples, keyword):
+    def get_soup(self, url):
+        headers = {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36",
+            "Accept-Language": "en-US, en;q=0.5",
+        }
 
-        """
-        Collects the number of examples for category, title, price, url and the thumbnail url from eBay for the provided keyword. 
-        Appends the results to the main dataframe
+        time.sleep(2)
 
-        Parameters:
-            no_of_examples (int): The number of listings to scrape
-            keyword (str): The keyword to scrape listings from
-        """
+        page = requests.get(url, headers=headers)
 
-        category, title, price, url, thumbnail_url = ([] for i in range(5))
+        return BeautifulSoup(page.content, "html.parser")
 
-        for page_no in range(1, (math.ceil(no_of_examples / 96) + 1)):
-            soup = self.get_page_soup(
-                f"https://www.ebay.com/sch/i.html?_from=R40&_nkw={keyword}&_ipg=96&LH_BIN=1&_pgn={page_no}")
+    def extract_info(self, soup):
+        info = soup.find_all("dl")
 
-            category.extend([keyword for value in soup.find_all("h3", class_="s-item__title")])
-            title.extend([value.text for value in soup.find_all("h3", class_="s-item__title")])
-            price.extend([value.text for value in soup.find_all("span", class_="s-item__price")])
-            url.extend([value['href'][:150] for value in soup.find_all("a", class_="s-item__link")])
-            thumbnail_url.extend([value['src'] for value in soup.find_all("img", class_="s-item__image-img")])
+        flat_info = pd.DataFrame()
+        cleaned_key = []
+        for i in info[0].find_all("dt"):
+            cleaned_key.append(i.text)
 
-        collected_info = pd.DataFrame({
-            "category_id": category,
-            "title": title,
-            "price": price,
-            "url": url,
-            "thumbnail_url": thumbnail_url
-        })
+        cleaned_value = []
+        for i in info[0].find_all("dd"):
+            cleaned_value.append(i.text)
 
-        self.df = self.df.append(collected_info, ignore_index=True)
+        flat_info["key"] = cleaned_key
+        flat_info["value"] = cleaned_value
+
+        clean_df = flat_info.pivot_table(values="value", columns="key", aggfunc="first")
+
+        required_data = [
+            "Area",
+            "Build year",
+            "Building type",
+            "Equipment",
+            "Floor",
+            "Heating system",
+            "No. of floors",
+            "Number of rooms ",
+        ]
+
+        clean_df = clean_df.filter(required_data)
+        clean_df["Area"] = clean_df["Area"].str.findall(r"(\d+)")[0]
+        clean_df["Build year"] = clean_df["Build year"].str.findall(r"(\d+)")
+
+        price = soup.find("span", class_="main-price")
+        price = re.findall("\d+", price.text)
+        clean_df["price"] = "".join(price)
+
+        address = soup.find("h1")
+        address = address.text.split(",")
+
+        clean_df["city"] = address[0].strip()
+        clean_df["region"] = address[1].strip()
+
+        if len(address) > 2:
+            clean_df["street"] = address[2].strip()
+        else:
+            clean_df["street"] = "None"
+
+        self.df = self.df.append(clean_df, ignore_index=True)
+
+    def scrape_aruodas(self, pages):
+        for page in range(pages):
+            search = self.get_soup(f'https://m.en.aruodas.lt/butai/puslapis/{page}/')
+            search = search.find_all("a", class_="object-image-link")
+
+            for link in search:
+                # flat = self.get_soup(f'https://m.en.aruodas.lt{link["href"]}')
+                flat = self.get_soup(f'https://m.en.aruodas.lt/butai-vilniuje-santariskese-daujoto-g-parduodamas-5884-kv-m-dvieju-kambariu-butas-1-2979077/?return_url=%2Fbutai%2F%3Fobj%3D1')
+                self.extract_info(flat)
+
+    def save(self):
+        pickle.dump(self.df, open("df.pkl", "wb"))
+
+a = Scraper()
+a.scrape_aruodas(2)
+a.save()

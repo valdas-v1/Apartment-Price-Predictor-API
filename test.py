@@ -45,18 +45,21 @@ clean_df = clean_df.filter(required_data)
 clean_df['Area'] = clean_df['Area'].str.findall(r'(\d+)')[0]
 clean_df['Build year'] = clean_df['Build year'].str.findall(r'(\d+)')
 
-pickle.dump(clean_df, open("flat_info.pkl", "wb"))
 
 price = soup.find("span", class_="main-price")
-price = re.findall("\d", price.text)
+price = re.findall("\d+", price.text)
+clean_df['price'] = ''.join(price)
 
 address = soup.find("h1")
 address = address.text.split(",")
 
-city = address[0].strip()
-region = address[1].strip()
+clean_df['city'] = address[0].strip()
+clean_df['region'] = address[1].strip()
 
-if len(address) > 3:
-    street = address[2].strip()
+if len(address) > 2:
+    clean_df['street'] = address[2].strip()
+else:
+    clean_df['street'] = 'None'
 
 print(clean_df)
+pickle.dump(clean_df, open("flat_info.pkl", "wb"))
