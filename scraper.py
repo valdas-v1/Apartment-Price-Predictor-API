@@ -1,9 +1,12 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+pd.options.mode.chained_assignment = None
+
 import pickle
 import re
 import time
+
 
 class Scraper:
     def __init__(self):
@@ -16,7 +19,7 @@ class Scraper:
             "Accept-Language": "en-US, en;q=0.5",
         }
 
-        time.sleep(2)
+        time.sleep(1.51)
 
         page = requests.get(url, headers=headers)
 
@@ -51,12 +54,22 @@ class Scraper:
         ]
 
         clean_df = clean_df.filter(required_data)
-        clean_df["Area"] = clean_df["Area"].str.findall(r"(\d+)")[0]
+        
+        clean_df["Area"] = clean_df["Area"].str.findall(r"(\d+)")
+        clean_df["Area"] = float(".".join(clean_df['Area'].iloc[0]))
+        
         clean_df["Build year"] = clean_df["Build year"].str.findall(r"(\d+)")
+        
+        clean_df['Renovation year'] = 0
+        if len(clean_df['Build year'].iloc[0]) == 2:
+            clean_df['Renovation year'].iloc[0] = int(clean_df['Build year'].iloc[0][1])
+            clean_df['Build year'].iloc[0] = int(clean_df['Build year'].iloc[0][0])
+        else:
+            clean_df['Build year'].iloc[0] = int(clean_df['Build year'].iloc[0][0])
 
         price = soup.find("span", class_="main-price")
         price = re.findall("\d+", price.text)
-        clean_df["price"] = "".join(price)
+        clean_df["price"] = float("".join(price))
 
         address = soup.find("h1")
         address = address.text.split(",")
@@ -73,17 +86,19 @@ class Scraper:
 
     def scrape_aruodas(self, pages):
         for page in range(pages):
-            search = self.get_soup(f'https://m.en.aruodas.lt/butai/puslapis/{page}/')
+            search = self.get_soup(f"https://m.en.aruodas.lt/butai/puslapis/{page}/")
             search = search.find_all("a", class_="object-image-link")
 
             for link in search:
-                # flat = self.get_soup(f'https://m.en.aruodas.lt{link["href"]}')
-                flat = self.get_soup(f'https://m.en.aruodas.lt/butai-vilniuje-santariskese-daujoto-g-parduodamas-5884-kv-m-dvieju-kambariu-butas-1-2979077/?return_url=%2Fbutai%2F%3Fobj%3D1')
+                print(f'https://m.en.aruodas.lt{link["href"]}')
+                flat = self.get_soup(f'https://m.en.aruodas.lt{link["href"]}')
+
                 self.extract_info(flat)
 
     def save(self):
         pickle.dump(self.df, open("df.pkl", "wb"))
 
+
 a = Scraper()
-a.scrape_aruodas(2)
+a.scrape_aruodas(1)
 a.save()
