@@ -18,7 +18,7 @@ class Scraper:
             "Accept-Language": "en-US, en;q=0.5",
         }
 
-        time.sleep(1.51)
+        time.sleep(1.26)
 
         page = requests.get(url, headers=headers)
 
@@ -45,7 +45,6 @@ class Scraper:
                 "No. of floors",
                 "Number of rooms ",
                 "Renovation year",
-                "price",
             ]
         ]
 
@@ -62,7 +61,9 @@ class Scraper:
             ]
         )
 
-        encoded_df = encoded_df.join(categorical_values)
+        self.encoded_df = self.encoded_df.join(categorical_values)
+        pickle.dump(self.encoded_df, open("encoded.pkl", "wb"))
+
 
     def extract_info(self, soup):
         info = soup.find_all("dl")
@@ -139,5 +140,6 @@ class Scraper:
 
 
 a = Scraper()
-a.scrape_aruodas(1)
+a.scrape_aruodas(100)
 a.save()
+a.encode_data()
