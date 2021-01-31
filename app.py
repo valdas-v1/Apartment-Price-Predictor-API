@@ -2,6 +2,7 @@ import pickle
 import json
 from flask import Flask, request
 import numpy as np
+import pandas as pd
 
 SAVED_MODEL_PATH = "house_price_predictor.pkl"
 
@@ -10,15 +11,16 @@ classifier = pickle.load(open(SAVED_MODEL_PATH, "rb"))
 
 app = Flask(__name__)
 
-def __process_input(request_data: list) -> np.array:
+
+def __process_input(request_data: list) -> pd.DataFrame:
     """
     Transforms the provided JSON to a numpy array
     """
-    return np.asarray(json.loads(request.data)["inputs"])
+    return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
 
 
 @app.route("/predict", methods=["POST"])
-def predict() -> str:
+def predict() -> list:
     """
     Takes data about a house and makes a price prediction with a pretrained model.
     Can accept as many house inputs as provided
@@ -33,4 +35,4 @@ def predict() -> str:
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
