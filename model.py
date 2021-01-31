@@ -4,9 +4,11 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 import pickle
 
+# Load the aparment data from scraping aruodas.lt
 df = pd.read_csv("250.csv")
 df = df.drop_duplicates().reset_index()
 
+# Changing data type of numeric data
 df = df.astype(
     {
         "Area": "float64",
@@ -19,6 +21,7 @@ df = df.astype(
     }
 )
 
+# Categorical data to be encoded
 encoded_df = df[
     [
         "Area",
@@ -30,8 +33,9 @@ encoded_df = df[
     ]
 ]
 
-le = preprocessing.LabelEncoder()
 
+# Encoding categorical data with Scikit-Learn LabelEncoder
+le = preprocessing.LabelEncoder()
 categorical_values = df[
     [
         "Building type",
@@ -43,10 +47,13 @@ categorical_values = df[
     ]
 ].apply(le.fit_transform)
 
+# Joining encoded numerical and categorical data
 encoded_df = encoded_df.join(categorical_values)
 
-
-X_train, X_test, y_train, y_test = train_test_split(encoded_df, df['price'], test_size=0.1)
+# Spliting the data and training a Gradient Boosting Regressor model
+X_train, X_test, y_train, y_test = train_test_split(
+    encoded_df, df["price"], test_size=0.1
+)
 clf = GradientBoostingRegressor()
 clf.fit(X_train, y_train)
 
@@ -54,4 +61,6 @@ clf.fit(X_train, y_train)
 pickle.dump(clf, open("house_price_predictor.pkl", "wb"))
 pickle.dump(X_test, open("test_data.pkl", "wb"))
 pickle.dump(y_test, open("test_labels.pkl", "wb"))
+
+# Saving LabelEncoder object for input encoding and output decoding
 pickle.dump(le, open("label_encoder.pkl", "wb"))
