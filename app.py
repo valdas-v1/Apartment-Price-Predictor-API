@@ -4,7 +4,7 @@ from flask import Flask, request
 import numpy as np
 import pandas as pd
 
-SAVED_MODEL_PATH = "house_price_predictor.pkl"
+SAVED_MODEL_PATH = "model_files/house_price_predictor.pkl"
 
 # Loading the classifier from file
 classifier = pickle.load(open(SAVED_MODEL_PATH, "rb"))
