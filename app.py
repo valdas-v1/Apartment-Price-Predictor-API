@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 def __process_input(request_data: list) -> pd.DataFrame:
     """
-    Transforms the provided JSON to a numpy array
+    Transforms the provided JSON to a Pandas DataFrame
     """
     return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
 
