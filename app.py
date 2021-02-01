@@ -4,6 +4,7 @@ from flask import Flask, request
 import numpy as np
 import pandas as pd
 from database import Database
+from sklearn import preprocessing
 
 SAVED_MODEL_PATH = "model_files/house_price_predictor.pkl"
 SAVED_LABEL_ENCODER_PATH = "model_files/label_encoder.pkl"
@@ -31,12 +32,10 @@ def __encode_input(data: pd.DataFrame) -> pd.DataFrame:
             "Floor": "int64",
             "No. of floors": "int64",
             "Renovation year": "int64",
-            "price": "float64",
             "Number of rooms": "int64",
         }
     )
 
-    # Categorical data to be encoded
     encoded_data = data[
         [
             "Area",
@@ -47,10 +46,9 @@ def __encode_input(data: pd.DataFrame) -> pd.DataFrame:
             "Renovation year",
         ]
     ]
-
-    # Encoding categorical data with Scikit-Learn LabelEncoder
-    le = preprocessing.LabelEncoder()
-    categorical_values = data[
+    
+    # Categorical data to be encoded
+    categorical_data = data[
         [
             "Building type",
             "Equipment",
@@ -59,10 +57,24 @@ def __encode_input(data: pd.DataFrame) -> pd.DataFrame:
             "region",
             "street",
         ]
-    ].apply(le.fit_transform)
+    ]
 
-    # Joining and returning encoded numerical and categorical data
-    return encoded_data.join(categorical_values)
+
+    # Encoding categorical data with Scikit-Learn LabelEncoder
+    categorical_columns = [
+        "Building type",
+        "Equipment",
+        "Heating system",
+        "city",
+        "region",
+        "street",
+    ]
+
+    for col in categorical_columns:
+        categorical_data[col] = le[col].transform(categorical_data[col])
+
+    # Joining encoded numerical and categorical data
+    return encoded_data.join(categorical_data)
 
 
 @app.route("/predict", methods=["POST"])

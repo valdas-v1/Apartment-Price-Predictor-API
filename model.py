@@ -35,7 +35,6 @@ encoded_df = df[
 
 
 # Encoding categorical data with Scikit-Learn LabelEncoder
-le = preprocessing.LabelEncoder()
 categorical_values = df[
     [
         "Building type",
@@ -45,7 +44,23 @@ categorical_values = df[
         "region",
         "street",
     ]
-].apply(le.fit_transform)
+]
+
+label_object = {}
+categorical_columns = [
+        "Building type",
+        "Equipment",
+        "Heating system",
+        "city",
+        "region",
+        "street",
+    ]
+
+for col in categorical_columns:
+    labelencoder = preprocessing.LabelEncoder()
+    labelencoder.fit(categorical_values[col])
+    categorical_values[col] = labelencoder.fit_transform(categorical_values[col])
+    label_object[col] = labelencoder
 
 # Joining encoded numerical and categorical data
 encoded_df = encoded_df.join(categorical_values)
@@ -63,4 +78,4 @@ pickle.dump(X_test, open("model_files/test_data.pkl", "wb"))
 pickle.dump(y_test, open("model_files/test_labels.pkl", "wb"))
 
 # Saving LabelEncoder object for input encoding and output decoding
-pickle.dump(le, open("model_files/label_encoder.pkl", "wb"))
+pickle.dump(label_object, open("model_files/label_encoder.pkl", "wb"))
