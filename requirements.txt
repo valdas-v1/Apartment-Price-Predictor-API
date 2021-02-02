@@ -22,7 +22,7 @@ regex==2020.11.13
 requests==2.25.1
 scikit-learn==0.24.1
 scipy==1.6.0
-scrape-aruodas==0.0.1
+git+https://github.com/valdas-v1/scrape_aruodas
 six==1.15.0
 sklearn==0.0
 soupsieve==2.1
