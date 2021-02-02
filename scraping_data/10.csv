@@ -1,0 +1,251 @@
+Area,Build year,Building type,Equipment,Floor,Heating system,No. of floors,Number of rooms,Renovation year,price,city,region,street
+73.86,2020,Brick,Partial decoration,4,"Electric, aerothermal",4,3,0,106000,Vilnius,Santariškės,Daujoto g.
+64,2020,Brick,Fully equipped,6,Central thermostat,6,3,0,259000,Vilnius,Šnipiškės,Rinktinės g.
+76,2018,Brick,Fully equipped,6,Central thermostat,6,3,0,279000,Vilnius,Žvėrynas,Pieninės g.
+76.4,2018,Brick,Fully equipped,6,"Solid fuel, gas",6,3,0,279000,Vilnius,Žvėrynas,Pieninės g.
+62,2020,Brick,Fully equipped,2,Central thermostat,6,3,0,139999,Vilnius,Naujamiestis,Gerosios Vilties g.
+64,2020,Brick,Fully equipped,5,"Central thermostat, other",6,3,0,259000,Vilnius,Šnipiškės,Rinktinės g.
+46.86,2021,Other,Partial decoration,6,Central thermostat,9,2,0,99529,Vilnius,Šnipiškės,Giedraičių g.
+27,2021,Other,Partial decoration,7,Central thermostat,9,1,0,67076,Vilnius,Šnipiškės,Giedraičių g.
+51.25,2021,Brick,Partial decoration,3,Central thermostat,5,2,0,80000,Vilnius,Pilaitė,Bitėnų g.
+38.59,2021,Brick,Partial decoration,4,Central thermostat,4,2,0,49990,Klaipėda,Šauliai,Ragainės g.
+81.65,2020,Brick,Partial decoration,2,Central thermostat,4,3,0,288500,Vilnius,Užupis,Polocko g.
+58.84,2020,Brick,Partial decoration,3,"Electric, aerothermal",4,2,0,85500,Vilnius,Santariškės,Daujoto g.
+45,2021,Brick,Fully equipped,2,Gas,3,2,0,58900,Kauno r. sav.,Giraitės k.,Putinų g.
+60.5,2019,Brick,Fully equipped,3,"Electric, gas",3,2,0,69500,Kauno r. sav.,None,Giraitės k.
+57.51,2020,Brick,Partial decoration,4,"Electric, aerothermal",4,2,0,84000,Vilnius,Santariškės,Daujoto g.
+33.6,2021,Brick,Partial decoration,5,Central thermostat,5,1,0,89000,Vilnius,Šnipiškės,Giedraičių g.
+37.8,2021,Brick,Partial decoration,4,Central thermostat,6,2,0,94500,Vilnius,Šnipiškės,Giedraičių g.
+33.35,2021,Brick,Partial decoration,3,Central thermostat,6,1,0,85000,Vilnius,Šnipiškės,Giedraičių g.
+57.94,2021,Brick,Partial decoration,4,Central thermostat,5,3,0,93000,Vilnius,Pilaitė,Bitėnų g.
+25,2020,Brick,Partial decoration,4,Central thermostat,4,1,0,36490,Klaipėda,Šauliai,Ragainės g.
+133,2019,Brick,Partial decoration,2,Central,3,4,0,259000,Klaipėda,Centras,Žiedų skg.
+68.29,2020,Block house,Partial decoration,1,Central thermostat,5,2,0,85400,Vilnius,Pilaitė,Karaliaučiaus g.
+40.63,2020,Block house,Partial decoration,3,Central,9,2,0,55500,Kaunas,Dainava,Pramonės pr.
+64,2004,Brick,Fully equipped,2,"Electric, other",3,2,2016,185500,Vilnius,Žvėrynas,Kęstučio g.
+63.15,2021,Brick,Partial decoration,3,Central thermostat,4,3,0,74990,Klaipėda,Šauliai,Ragainės g.
+73.86,2020,Brick,Partial decoration,4,"Electric, aerothermal",4,3,0,106000,Vilnius,Santariškės,Daujoto g.
+64,2020,Brick,Fully equipped,6,Central thermostat,6,3,0,259000,Vilnius,Šnipiškės,Rinktinės g.
+76,2018,Brick,Fully equipped,6,Central thermostat,6,3,0,279000,Vilnius,Žvėrynas,Pieninės g.
+76.4,2018,Brick,Fully equipped,6,"Solid fuel, gas",6,3,0,279000,Vilnius,Žvėrynas,Pieninės g.
+62,2020,Brick,Fully equipped,2,Central thermostat,6,3,0,139999,Vilnius,Naujamiestis,Gerosios Vilties g.
+64,2020,Brick,Fully equipped,5,"Central thermostat, other",6,3,0,259000,Vilnius,Šnipiškės,Rinktinės g.
+46.86,2021,Other,Partial decoration,6,Central thermostat,9,2,0,99529,Vilnius,Šnipiškės,Giedraičių g.
+27,2021,Other,Partial decoration,7,Central thermostat,9,1,0,67076,Vilnius,Šnipiškės,Giedraičių g.
+51.25,2021,Brick,Partial decoration,3,Central thermostat,5,2,0,80000,Vilnius,Pilaitė,Bitėnų g.
+38.59,2021,Brick,Partial decoration,4,Central thermostat,4,2,0,49990,Klaipėda,Šauliai,Ragainės g.
+81.65,2020,Brick,Partial decoration,2,Central thermostat,4,3,0,288500,Vilnius,Užupis,Polocko g.
+58.84,2020,Brick,Partial decoration,3,"Electric, aerothermal",4,2,0,85500,Vilnius,Santariškės,Daujoto g.
+45,2021,Brick,Fully equipped,2,Gas,3,2,0,58900,Kauno r. sav.,Giraitės k.,Putinų g.
+60.5,2019,Brick,Fully equipped,3,"Electric, gas",3,2,0,69500,Kauno r. sav.,None,Giraitės k.
+57.51,2020,Brick,Partial decoration,4,"Electric, aerothermal",4,2,0,84000,Vilnius,Santariškės,Daujoto g.
+33.6,2021,Brick,Partial decoration,5,Central thermostat,5,1,0,89000,Vilnius,Šnipiškės,Giedraičių g.
+37.8,2021,Brick,Partial decoration,4,Central thermostat,6,2,0,94500,Vilnius,Šnipiškės,Giedraičių g.
+33.35,2021,Brick,Partial decoration,3,Central thermostat,6,1,0,85000,Vilnius,Šnipiškės,Giedraičių g.
+57.94,2021,Brick,Partial decoration,4,Central thermostat,5,3,0,93000,Vilnius,Pilaitė,Bitėnų g.
+25,2020,Brick,Partial decoration,4,Central thermostat,4,1,0,36490,Klaipėda,Šauliai,Ragainės g.
+133,2019,Brick,Partial decoration,2,Central,3,4,0,259000,Klaipėda,Centras,Žiedų skg.
+68.29,2020,Block house,Partial decoration,1,Central thermostat,5,2,0,85400,Vilnius,Pilaitė,Karaliaučiaus g.
+40.63,2020,Block house,Partial decoration,3,Central,9,2,0,55500,Kaunas,Dainava,Pramonės pr.
+64,2004,Brick,Fully equipped,2,"Electric, other",3,2,2016,185500,Vilnius,Žvėrynas,Kęstučio g.
+63.15,2021,Brick,Partial decoration,3,Central thermostat,4,3,0,74990,Klaipėda,Šauliai,Ragainės g.
+43.08,2021,Brick,Partial decoration,4,Central thermostat,4,2,0,144850,Vilnius,Senamiestis,Polocko g.
+55.6,2021,Brick,Partial decoration,4,Central thermostat,4,3,0,99900,Vilnius,Lazdynėliai,Lazdynėlių g.
+61.33,2021,Brick,Fully equipped,3,Gas,3,3,0,70300,Kauno r. sav.,Giraitės k.,Girios g.
+61.33,2021,Brick,Partial decoration,2,Gas,3,3,0,55200,Kauno r. sav.,Giraitės k.,Girios g.
+24.57,2020,Brick,Fully equipped,1,Central thermostat,7,1,0,40000,Klaipėda,Varpai,Varpų g.
+38.79,2020,Brick,Fully equipped,3,Central thermostat,9,2,0,62000,Klaipėda,Varpai,Varpų g.
+58.46,2020,Brick,Fully equipped,2,Central thermostat,7,3,0,91000,Klaipėda,Varpai,Varpų g.
+66.35,2019,Brick,Partial decoration,3,Gas,3,3,0,116700,Vilnius,Antakalnis,Pylimėlių g.
+66.32,2020,Other,Partial decoration,5,Central thermostat,9,3,0,135000,Vilnius,Šnipiškės,Giedraičių g.
+55.86,2021,Brick,Partial decoration,4,Central thermostat,5,3,0,86000,Vilnius,Pilaitė,Bitėnų g.
+52.44,2021,Brick,Partial decoration,4,Central thermostat,5,3,0,83000,Vilnius,Pilaitė,Bitėnų g.
+63.3,2021,Brick,Partial decoration,5,Central thermostat,5,3,0,116000,Vilnius,Pilaitė,Bitėnų g.
+65.1,2021,Brick,Partial decoration,3,Central thermostat,5,3,0,100000,Vilnius,Pilaitė,Bitėnų g.
+67,2020,Block house,Fully equipped,4,Central thermostat,4,3,0,123000,Vilnius,Pilaitė,Karaliaučiaus g.
+21.11,2020,Brick,Partial decoration,2,Central thermostat,4,1,0,86600,Vilnius,Užupis,Polocko g.
+67,2020,Brick,Partial decoration,1,Central thermostat,5,3,0,144000,Klaipėda,Mažasis kaimelis,Panevėžio g.
+63,2020,Brick,Partial decoration,4,Central thermostat,5,3,0,135400,Klaipėda,Mažasis kaimelis,Panevėžio g.
+54.71,2020,Brick,Partial decoration,2,Central,5,2,0,95912,Vilnius,Lazdynėliai,Bukčių g.
+47.29,1977,Brick,Fully equipped,2,Central,4,2,0,62000,Kaunas,Dainava,Elektrėnų g.
+79.15,2016,Brick,Partial decoration,5,Central thermostat,5,3,0,98000,Klaipėda,Miškas,Dragūnų g.
+53.58,2020,Brick,Partial decoration,2,Central thermostat,5,2,0,115000,Klaipėda,Mažasis kaimelis,Panevėžio g.
+62,2020,Brick,Fully equipped,1,"Electric, gas",2,3,0,73900,Kaunas,Šilainiai,K. Čerbulėno g.
+65.81,2021,Brick,Partial decoration,2,Central thermostat,4,4,0,114150,Vilnius,Justiniškės,Taikos g.
+39.03,2021,Monolithic,Partial decoration,3,Gas,4,2,0,72791,Palanga,Šventoji,Jūros g.
+45.4,2019,Brick,Fully equipped,3,Central thermostat,5,2,0,104420,Palanga,None,Vėžių g.
+41.52,2019,Brick,Partial decoration,5,Central thermostat,5,2,0,85110,Palanga,None,Vėžių g.
+56.62,2021,Brick,Partial decoration,2,Central thermostat,6,3,0,133000,Vilnius,Šnipiškės,Giedraičių g.
+59.78,2021,Brick,Partial decoration,2,Gas,4,2,0,88667,Kaunas,Žemutiniai Kaniūkai,Įkalnės aklg.
+65.54,1975,Brick,Fully equipped,3,Central,5,3,0,89900,Kaunas,Žaliakalnis,J. Žemgulio g.
+59.12,2021,Monolithic,Partial decoration,1,Central thermostat,6,3,0,115284,Vilnius,Šeškinė,Gelvonų g.
+68.27,2021,Monolithic,Partial decoration,2,Central thermostat,6,3,0,133127,Vilnius,Šeškinė,Gelvonų g.
+57.1,2021,Monolithic,Partial decoration,3,Central thermostat,6,2,0,114200,Vilnius,Šeškinė,Gelvonų g.
+68.3,2020,Block house,Fully equipped,1,Central thermostat,5,2,0,109900,Vilnius,Pilaitė,Karaliaučiaus g.
+60.95,2020,Block house,Partial decoration,2,Central thermostat,9,3,0,73000,Kaunas,Dainava,Pramonės pr.
+60,2020,Block house,Fully equipped,4,Central thermostat,4,3,0,114000,Vilnius,Pilaitė,Tolminkiemio g.
+74,2020,Block house,Fully equipped,1,Central thermostat,4,3,0,133000,Vilnius,Pilaitė,Karaliaučiaus g.
+68.27,2020,Monolithic,Partial decoration,3,Central thermostat,6,3,0,133100,Vilnius,Šeškinė,Gelvonų g.
+26.33,2021,Brick,Partial decoration,2,Central thermostat,4,1,0,51500,Vilnius,Lazdynėliai,Lazdynėlių g.
+50,1959,Brick,Fully equipped,0,Electric,4,2,0,98000,Vilnius,Naujamiestis,A. Smetonos g.
+42.79,2021,Brick,Partial decoration,3,Central thermostat,5,2,0,73700,Vilnius,Pašilaičiai,Budiniškių g.
+80,2021,Brick,Partial decoration,4,Central thermostat,8,4,0,107150,Kaunas,Dainava,Partizanų g.
+63.57,2020,Brick,Partial decoration,3,Central thermostat,4,3,0,82760,Kaunas,Žaliakalnis,Žemaičių g.
+52.14,2020,Brick,Partial decoration,4,Central thermostat,4,2,0,76180,Kaunas,Žaliakalnis,Žemaičių g.
+66.34,2021,Brick,Partial decoration,3,Central thermostat,5,3,0,147138,Vilnius,Šnipiškės,Linkmenų g.
+63,2020,Brick,Partial decoration,2,Gas,3,3,0,56700,Kauno r. sav.,Giraitės k.,Girios g.
+64,2020,Brick,Partial decoration,3,Gas,3,3,0,57600,Kauno r. sav.,Giraitės k.,Girios g.
+100,2019,Brick,Fully equipped,1,Gas,2,4,0,110000,Kauno r. sav.,Giraitės k.,Adolfo Šapokos g.
+76.81,2018,Brick,Partial decoration,1,Central thermostat,7,3,0,112400,Klaipėda,Miškas,Šarlotės g.
+76.52,2019,Brick,Partial decoration,3,Central thermostat,7,3,0,124000,Klaipėda,Miškas,Šarlotės g.
+37.18,2021,Brick,Partial decoration,4,Central thermostat,4,2,0,74100,Vilnius,Lazdynėliai,Lazdynėlių g.
+65.64,2019,Brick,Partial decoration,3,Central,4,4,0,116800,Vilnius,Justiniškės,Taikos g.
+74.26,1971,Brick,Fully equipped,4,Central,5,4,0,68000,Druskininkų m.,None,Veisiejų g.
+55,2015,Brick,Fully equipped,2,Central,4,2,0,100000,Klaipėda,Mažasis kaimelis,Šiaurės pr.
+73.65,2020,Brick,Fully equipped,1,Gas,3,3,0,149000,Kaunas,Šilainiai,Josvainių g.
+40,2021,Block house,Partial decoration,9,Central thermostat,9,2,0,60000,Kaunas,Dainava,Pramonės pr.
+65.73,2021,Brick,Partial decoration,2,Central thermostat,4,3,0,114200,Vilnius,Justiniškės,Taikos g.
+87.08,2021,Brick,Partial decoration,1,Gas,1,4,0,119569,Kaunas,Žemutiniai Kaniūkai,Įkalnės aklg.
+73,2021,Brick,Partial decoration,6,Central thermostat,9,4,0,101000,Vilnius,Justiniškės,Rygos g.
+51.65,2021,Block house,Fully equipped,1,Gas,3,2,0,64563,Kauno r. sav.,Užliedžių k.,Ilgoji g.
+85.96,2017,Brick,Partial decoration,1,Gas,4,3,0,122472,Kaunas,Šilainiai,Kalnų g.
+21.7,1934,Brick,Fully equipped,0,Central,6,1,2013,52000,Kaunas,Centras,V. Putvinskio g.
+60,2020,Brick,Fully equipped,2,Gas,2,3,0,119000,Kaunas,Dainava,K. Šakenio g.
+88.77,2020,Block house,Partial decoration,1,Central thermostat,4,4,0,113400,Vilnius,Pilaitė,Karaliaučiaus g.
+48,2018,Block house,Fully equipped,1,Central thermostat,4,2,0,132000,Vilnius,Markučiai,Manufaktūrų g.
+46.41,2020,Brick,Partial decoration,2,Central thermostat,4,2,0,161200,Vilnius,Užupis,Polocko g.
+60,2020,Brick,Fully equipped,1,Gas,4,3,0,96000,Vilnius,Tarandė,Tarandės g.
+33.63,2020,Brick,Partial decoration,1,Central,5,1,0,50370,Kaunas,Dainava,Partizanų g.
+45.01,2021,Brick,Partial decoration,3,Central thermostat,4,2,0,55990,Klaipėda,Šauliai,Ragainės g.
+42.59,2022,Brick,Partial decoration,2,Central thermostat,2,2,0,97600,Vilnius,Markučiai,Pakraščio g.
+32.14,2021,Brick,Partial decoration,2,Central thermostat,5,1,0,52600,Vilnius,Pašilaičiai,Budiniškių g.
+57.9,2021,Brick,Partial decoration,3,Central thermostat,8,3,0,82440,Kaunas,Dainava,Partizanų g.
+46,2020,Brick,Partial decoration,1,Central thermostat,5,2,0,69820,Kaunas,Dainava,Partizanų g.
+36.32,2019,Other,Partial decoration,7,Central thermostat,8,2,0,89800,Vilnius,Šeškinė,Siesikų g.
+46,2021,Brick,Partial decoration,2,Central thermostat,5,2,0,105030,Vilnius,Šnipiškės,Linkmenų g.
+106.93,1979,Brick,Fully equipped,2,Gas,5,4,2014,234900,Vilnius,Naujamiestis,T. Ševčenkos g.
+124.69,1998,Monolithic,Fully equipped,2,Electric,3,4,2020,330000,Vilnius,Senamiestis,J. Basanavičiaus g.
+36.38,2020,Brick,Partial decoration,4,Central thermostat,4,1,0,53520,Kaunas,Žaliakalnis,Žemaičių g.
+61,1979,Block house,Fully equipped,3,Central,5,3,0,66300,Klaipėda,Žardininkai,Reikjaviko g.
+148,2020,Brick,Partial decoration,2,Central thermostat,2,4,0,553850,Vilnius,Senamiestis,Pylimo g.
+22.74,2021,Brick,Partial decoration,3,Central thermostat,4,1,0,42500,Vilnius,Lazdynėliai,Lazdynėlių g.
+41.69,2020,Brick,Partial decoration,2,Gas,3,2,0,79900,Kaunas,Žaliakalnis,Studentų g.
+72.63,2005,Brick,Fully equipped,4,Central thermostat,6,2,0,114900,Vilnius,Pašilaičiai,Justiniškių g.
+63.23,1994,Brick,Fully equipped,1,"Electric, solid fuel",4,3,0,73900,Palanga,Palanga,Vasaros g.
+43.5,2000,Monolithic,Fully equipped,2,Electric,5,1,0,105000,Vilnius,Žvėrynas,Sėlių g.
+101.45,2007,Brick,Fully equipped,4,Central thermostat,9,4,0,225000,Vilnius,Šiaurės miestelis,S. Žukausko g.
+21,2021,Brick,Fully equipped,2,"Electric, aerothermal, other",3,2,2021,23100,Druskininkų m.,None,K. Dineikos g.
+114,1985,Brick,Partial decoration,5,Central,5,5,2020,159600,Klaipėda,Centras,Danės g.
+143,2020,Brick,Fully equipped,3,Gas,3,5,0,799000,Vilnius,Turniškės,Turniškių g.
+52.24,2020,Brick,Partial decoration,2,Gas,3,2,0,44404,Kauno r. sav.,Užliedžių k.,Ilgoji g.
+66.05,2006,Wooden house,Fully equipped,2,Electric,3,3,2016,195000,Neringos m.,None,Pervalkos g.
+100.44,1860,Brick,Partial decoration,2,Central,3,3,2019,400756,Vilnius,Žvėrynas,Birutės g.
+60,2020,Brick,Partial decoration,4,Central thermostat,4,3,0,90000,Klaipėda,Tauralaukis,Tauralaukio g.
+31.02,2020,Monolithic,Partial decoration,2,Central,5,2,0,59800,Vilnius,Šnipiškės,Jeronimo Ralio g.
+59.3,2021,Brick,Partial decoration,4,Central thermostat,4,3,0,79932,Kaunas,Žemieji Šančiai,Vokiečių g.
+42.55,2021,Brick,Partial decoration,2,Central thermostat,4,2,0,58890,Kaunas,Žemieji Šančiai,Vokiečių g.
+35.86,2021,Brick,Partial decoration,1,Central thermostat,4,2,0,68134,Kaunas,Žemieji Šančiai,Vokiečių g.
+89,1989,Block house,Fully equipped,5,Central,9,4,0,77500,Klaipėda,Bandužiai,Markučių g.
+100,1956,Brick,Fully equipped,2,Other,3,3,0,115000,Klaipėda,Poilsis,Minijos g.
+63.91,2018,Brick,Partial decoration,2,Gas,4,3,0,73497,Druskininkų m.,None,Liškiavos g.
+49,2018,Brick,Partial decoration,2,Gas,4,2,0,58800,Druskininkų m.,None,Liškiavos g.
+73,2020,Brick,Partial decoration,2,Aerothermal,2,3,0,112500,Palanga,None,Medvalakio g.
+141,2020,Brick,Partial decoration,1,"Central, gas",1,4,0,225000,Vilnius,Lazdynėliai,Miškinių g.
+86,1910,Brick,Fully equipped,3,Central,3,3,0,210000,Vilnius,Senamiestis,Pakalnės g.
+80,2019,Brick,Partial decoration,3,Central,4,3,0,122000,Kaunas,Žaliakalnis,Tvirtovės al.
+88,2021,Brick,Partial decoration,1,Gas,1,3,0,95000,Kauno r. sav.,Vijūkų k.,Jūrės g.
+62.08,2017,Monolithic,Partial decoration,3,Gas,4,3,0,117952,Palanga,Šventoji,Jūros g.
+61.8,2021,Brick,Partial decoration,2,Central thermostat,4,3,0,109500,Vilnius,Justiniškės,Taikos g.
+40.63,2020,Block house,Partial decoration,2,Central thermostat,9,2,0,54500,Kaunas,Dainava,Pramonės pr.
+29.8,1965,Block house,Fully equipped,3,Central,9,1,0,62500,Vilnius,Žirmūnai,Žirmūnų g.
+94.47,1896,Brick,Fully equipped,3,Central,3,3,2018,360000,Vilnius,Naujamiestis,Algirdo g.
+39.5,2021,Monolithic,Partial decoration,1,Gas,4,2,0,102700,Palanga,Šventoji,Jūros g.
+42,2020,Brick,Fully equipped,4,Central thermostat,4,2,0,64990,Klaipėda,Šauliai,Ragainės g.
+57,2021,Brick,Partial decoration,3,Central thermostat,4,3,0,72990,Klaipėda,Šauliai,Ragainės g.
+68.36,2020,Brick,Partial decoration,5,Central thermostat,6,3,0,156000,Kaunas,Centras,Krėvos g.
+53.84,2020,Brick,Partial decoration,5,Central thermostat,6,2,0,122000,Kaunas,Centras,Krėvos g.
+59.87,2009,Block house,Fully equipped,11,Central thermostat,12,3,0,95000,Vilnius,Pašilaičiai,Perkūnkiemio g.
+35.85,2008,Brick,Fully equipped,3,Central thermostat,9,2,0,75000,Vilnius,Pašilaičiai,Perkūnkiemio g.
+112.93,2020,Monolithic,Partial decoration,6,Central thermostat,7,4,0,357000,Vilnius,Antakalnis,Smėlio g.
+100.75,2020,Brick,Partial decoration,2,Gas,3,4,0,183640,Vilnius,Bajorai,Salaspilio g.
+46.77,2020,Monolithic,Partial decoration,2,Gas,4,2,0,74173,Vilnius,Bajorai,Salaspilio g.
+50.72,2020,Brick,Partial decoration,3,Gas,3,2,0,86224,Kaunas,Žaliakalnis,P. Kalpoko g.
+50.44,2020,Brick,Fully equipped,1,Gas,3,2,0,107499,Kaunas,Žaliakalnis,P. Kalpoko g.
+38.56,2021,Brick,Partial decoration,1,Geothermal,3,2,0,78952,Palanga,None,Bangų g.
+55,2006,Brick,Fully equipped,4,Central thermostat,8,2,0,92000,Vilnius,Pašilaičiai,Sviliškių g.
+43.89,2018,Brick,Fully equipped,1,Central thermostat,4,1,0,77000,Vilnius,Lazdynėliai,Lietaus g.
+23.92,1940,Brick,Fully equipped,3,Central,6,1,0,46900,Vilnius,Senamiestis,Tauro g.
+57,1985,Block house,Fully equipped,3,Central,5,3,0,75000,Vilnius,Justiniškės,Taikos g.
+39,2013,Brick,Fully equipped,1,Central thermostat,6,1,0,72400,Vilnius,Viršuliškės,Viršuliškių skg.
+67.32,1980,Block house,Fully equipped,1,Central,5,3,0,89000,Vilnius,Šeškinė,Ukmergės g.
+65.2,2004,Brick,Fully equipped,5,Central thermostat,5,3,0,92900,Klaipėda,Debrecenas,Debreceno g.
+46.19,2016,Brick,Fully equipped,6,Central thermostat,7,2,0,98285,Vilnius,Karoliniškės,Sausio 13-osios g.
+39.18,1980,Brick,Fully equipped,8,Central,12,2,0,43500,Vilnius,Naujoji Vilnia,Parko g.
+184,1996,Brick,Fully equipped,2,Gas,3,6,0,125000,Kaunas,Šilainiai,Priekulės g.
+18.72,1957,Brick,Fully equipped,3,Central,3,1,0,13900,Kaunas,Vilijampolė,Sąjungos a.
+49.48,1977,Block house,Fully equipped,1,Central,12,2,0,79000,Vilnius,Viršuliškės,Viršuliškių g.
+62,2019,Block house,Fully equipped,4,Central thermostat,8,3,0,169900,Vilnius,Šnipiškės,Žalgirio g.
+198.26,1998,Brick,Fully equipped,3,Central,4,5,0,329000,Vilnius,Žvėrynas,Stirnų g.
+273.72,2018,Brick,Fully equipped,2,Gas,2,4,0,342000,Vilnius,Antakalnis,Nemenčinės pl.
+35.52,2020,Brick,Fully equipped,1,Other,2,2,0,103200,Palanga,Šventoji,Prieplaukos g.
+55.05,2019,Other,Partial decoration,8,Central thermostat,9,3,0,176200,Vilnius,Šeškinė,Siesikų g.
+114.03,2019,Other,Partial decoration,9,Central thermostat,9,3,0,216700,Vilnius,Šeškinė,Siesikų g.
+42.79,2022,Brick,Partial decoration,3,Central thermostat,6,2,0,69800,Vilnius,Pašilaičiai,Budiniškių g.
+31.82,2021,Brick,Partial decoration,4,Central thermostat,5,1,0,53700,Vilnius,Pašilaičiai,Budiniškių g.
+30,1938,Brick,Fully equipped,1,Central,4,1,0,112000,Vilnius,Senamiestis,Vilniaus g.
+90.39,2020,Brick,Partial decoration,1,Central,3,5,0,108470,Vilnius,Lazdynėliai,Bukčių g.
+89.44,2008,Brick,Fully equipped,5,Central thermostat,9,4,0,130000,Vilnius,Pašilaičiai,Perkūnkiemio g.
+80.25,1924,Brick,Fully equipped,2,Gas,3,3,2016,126900,Kaunas,Centras,Girstupio g.
+55.3,1967,Brick,Fully equipped,5,Central,5,3,0,52000,Klaipėda,Kaunas,Kauno g.
+20.6,1967,Brick,Fully equipped,1,Central,9,1,0,27000,Klaipėda,Kaunas,Kauno g.
+88,1934,Brick,Fully equipped,1,Central,3,3,0,129000,Klaipėda,Centras,Šaulių g.
+53.2,1970,Brick,Fully equipped,8,Central,9,2,0,51900,Klaipėda,Baltija,Baltijos pr.
+74,1988,Monolithic,Fully equipped,13,Central,16,3,0,82000,Vilnius,Justiniškės,Justiniškių g.
+45.16,2022,Brick,Partial decoration,2,Central thermostat,6,2,0,101000,Vilnius,Markučiai,Pakraščio g.
+65.82,2022,Brick,Partial decoration,5,Central thermostat,6,3,0,161700,Vilnius,Markučiai,Pakraščio g.
+115.8,1983,Brick,Fully equipped,2,Central,3,4,2020,330000,Kaunas,Senamiestis,J. Naugardo g.
+50.42,2020,Brick,Partial decoration,5,Central thermostat,7,2,0,69425,Klaipėda,Baltija,Baltijos pr.
+72,2017,Brick,Fully equipped,1,Gas,3,3,0,116000,Vilnius,Grigiškės,Lentvario g.
+79.51,2012,Brick,Fully equipped,2,Central thermostat,3,2,0,395000,Vilnius,Senamiestis,Trakų g.
+40.6,2021,Brick,Partial decoration,4,Central thermostat,9,2,0,91150,Vilnius,Verkiai,Žvalgų g.
+39.08,2021,Brick,Partial decoration,2,Central thermostat,9,2,0,86150,Vilnius,Verkiai,Žvalgų g.
+73.53,2021,Brick,Partial decoration,3,Central thermostat,9,3,0,100000,Vilnius,Justiniškės,Rygos g.
+38,2020,Brick,Partial decoration,9,Central thermostat,9,2,0,96000,Kaunas,Žaliakalnis,Radvilėnų pl.
+12,1982,Brick,Fully equipped,1,Central,5,1,0,29900,Vilnius,Naujamiestis,Kedrų g.
+46.99,1969,Block house,Fully equipped,5,Central,5,2,0,77500,Vilnius,Lazdynai,Erfurto g.
+41.13,1960,Brick,Fully equipped,2,Central,4,2,0,81000,Vilnius,Naujamiestis,Savanorių pr.
+46.9,1974,Block house,Fully equipped,5,Central,5,2,0,65000,Vilnius,Karoliniškės,Apolinaro Juozo Povilaičio g.
+66.53,2019,Brick,Partial decoration,1,Gas,3,3,0,117000,Vilnius,Antakalnis,Pylimėlių g.
+60.91,2020,Brick,Partial decoration,4,Central thermostat,6,3,0,131000,Kaunas,Centras,Krėvos g.
+89.53,2020,Brick,Partial decoration,5,Central thermostat,9,3,0,110000,Vilnius,Justiniškės,Rygos g.
+81.22,2008,Brick,Fully equipped,6,Central thermostat,9,3,0,139000,Vilnius,Karoliniškės,Algimanto Petro Kavoliuko g.
+24.84,1967,Block house,Fully equipped,4,Central,5,2,0,53500,Vilnius,Naujininkai,Dzūkų g.
+73.02,2021,Brick,Partial decoration,2,Central,3,4,0,241000,Vilnius,Antakalnis,T. Kosciuškos g.
+56.16,2020,Brick,Partial decoration,1,Gas,3,2,0,89856,Vilnius,Kalnėnai,Kašubų g.
+70.7,1967,Brick,Fully equipped,2,Central,5,4,0,68000,Klaipėda,Kaunas,Kauno g.
+33,2021,Brick,Partial decoration,1,Gas,2,2,0,62000,Palanga,None,Vėžių g.
+33,2021,Brick,Partial decoration,2,Gas,2,2,0,62000,Palanga,None,Vėžių g.
+59.46,1911,Wooden house,Fully equipped,1,Gas,2,3,2017,119000,Vilnius,Antakalnis,Rudens g.
+40.63,2020,Block house,Partial decoration,6,Central thermostat,9,2,0,58500,Kaunas,Dainava,Pramonės pr.
+58.86,2020,Brick,Partial decoration,2,Central,3,2,0,153036,Druskininkų m.,None,Klonio g.
+80,2019,Brick,Partial decoration,2,Gas,3,4,0,88000,Vilnius,Kalnėnai,Valonų g.
+38.02,2020,Brick,Fully equipped,1,Gas,3,2,0,124000,Palanga,None,Vanagupės g.
+32,1972,Block house,Other,3,Central,9,1,0,55000,Vilnius,Karoliniškės,Vido Maciulevičiaus g.
+99,2019,Brick,Partial decoration,1,Gas,2,4,0,105000,Vilnius,Pilaitė,Dituvos g.
+101.44,2018,Monolithic,Fully equipped,4,Geothermal,5,4,0,359000,Druskininkų m.,None,T. Kosciuškos g.
+60.95,2020,Block house,Partial decoration,9,Central thermostat,9,3,0,80000,Kaunas,Dainava,Pramonės pr.
+45,2021,Brick,Partial decoration,4,Central thermostat,9,2,0,72000,Vilnius,Justiniškės,Rygos g.
+17.9,1970,Block house,Fully equipped,5,Central,5,1,0,21500,Vilnius,Naujininkai,Dariaus ir Girėno g.
+65,1979,Block house,Fully equipped,3,Central,5,3,0,44000,Mažeikių m.,None,Taikos g.
+100,2001,Brick,Fully equipped,3,Gas,3,3,2020,345000,Vilnius,Senamiestis,Mindaugo g.
+78,2020,Brick,Partial decoration,2,Gas,4,3,0,210000,Vilnius,Užupis,Krivūlės g.
+66.07,1972,Brick,Fully equipped,5,Central,5,3,0,63000,Utenos m.,Dauniškis,Aušros g.
+48.98,1965,Block house,Fully equipped,3,Central,5,3,2012,43700,Šiauliai,Centras,A. Mickevičiaus g.
+27,1997,Brick,Partial decoration,4,Gas,4,1,0,55000,Palanga,None,Vytauto g.
+44,1997,Brick,Partial decoration,4,Gas,4,2,0,80000,Palanga,None,Vytauto g.
+36,1991,Block house,Fully equipped,7,Central thermostat,9,1,0,68000,Vilnius,Pašilaičiai,Laisvės pr.
+59.19,2006,Brick,Fully equipped,9,Central thermostat,12,2,0,93000,Vilnius,Fabijoniškės,Salomėjos Nėries g.
+28.12,2019,Brick,Fully equipped,1,Gas,3,1,0,65000,Vilnius,Antakalnis,Taurijos g.
+89.49,2003,Brick,Fully equipped,3,"Aerothermal, gas",5,3,0,164000,Vilnius,Baltupiai,Avižų g.
+89.49,2003,Brick,Fully equipped,3,"Aerothermal, gas",5,3,0,164000,Vilnius,Jeruzalė,Avižų g.
+82.33,2019,Brick,Partial decoration,3,Central thermostat,4,4,0,104999,Klaipėda,Šauliai,Ragainės g.

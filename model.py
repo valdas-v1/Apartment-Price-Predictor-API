@@ -8,7 +8,7 @@ import pickle
 df = pd.read_csv("scraping_data/250.csv")
 df = df.drop_duplicates().reset_index()
 
-# Changing data type of numeric data
+# Changing data type of numerical data
 df = df.astype(
     {
         "Area": "float64",
@@ -21,7 +21,7 @@ df = df.astype(
     }
 )
 
-# Categorical data to be encoded
+# Add numerical data to encoded DataFrame
 encoded_df = df[
     [
         "Area",
@@ -46,15 +46,16 @@ categorical_values = df[
     ]
 ]
 
+# Creating a LabelEncoder object and iterating through categorical columns
 label_object = {}
 categorical_columns = [
-        "Building type",
-        "Equipment",
-        "Heating system",
-        "city",
-        "region",
-        "street",
-    ]
+    "Building type",
+    "Equipment",
+    "Heating system",
+    "city",
+    "region",
+    "street",
+]
 
 for col in categorical_columns:
     labelencoder = preprocessing.LabelEncoder()
@@ -73,9 +74,14 @@ clf = GradientBoostingRegressor()
 clf.fit(X_train, y_train)
 
 # Saving the model and testing data to separate files
-pickle.dump(clf, open("model_files/house_price_predictor.pkl", "wb"))
-pickle.dump(X_test, open("model_files/test_data.pkl", "wb"))
-pickle.dump(y_test, open("model_files/test_labels.pkl", "wb"))
+with open("model_files/house_price_predictor.pkl", "wb") as f:
+    pickle.dump(clf, f)
+with open("model_files/test_data.pkl", "wb") as f:
+    pickle.dump(X_test, f)
+with open("model_files/test_labels.pkl", "wb") as f:
+    pickle.dump(y_test, f)
+
 
 # Saving LabelEncoder object for input encoding and output decoding
-pickle.dump(label_object, open("model_files/label_encoder.pkl", "wb"))
+with open("model_files/label_encoder.pkl", "wb") as f:
+    pickle.dump(label_object, f)

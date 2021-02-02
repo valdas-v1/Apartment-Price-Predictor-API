@@ -5,6 +5,9 @@ import io
 import pandas as pd
 
 class Database:
+    """
+    Implements saving prediction DataFrames to a remote Heroku postgres database
+    """
     def __init__(self):
         # Remote database connection
         self.engine = create_engine(os.environ['HEROKU_DB_24'])
@@ -29,3 +32,21 @@ class Database:
         contents = output.getvalue()
         self.cur.copy_from(output, table_name, null="")
         self.conn.commit()
+
+    def get_requests_and_responses(self, n: int) -> list:
+
+        """
+        Return last n most recent requests and responses
+
+        Parameters:
+            n (int): The number of requests and responses to query
+
+        Returns:
+            query (list): list of last n most recent requests and responses
+        """
+
+        self.cur.execute(f'''
+        SELECT * FROM predictions LIMIT {n} OFFSET (SELECT count(*) FROM predictions)-{n};
+        ''')
+
+        return self.cur.fetchall()
