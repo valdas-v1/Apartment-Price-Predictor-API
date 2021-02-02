@@ -51,7 +51,7 @@ $ python app.py
 ```
 
 ## Using the API
-To use the API, make a POST request with the sample JSON structure of 
+To use the API, make a POST request to the route of ```/predict``` with the sample JSON structure of 
 ```JSON
 {
     "inputs": [
