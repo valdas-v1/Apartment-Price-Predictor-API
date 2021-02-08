@@ -4,7 +4,7 @@ from flask import Flask, request
 import numpy as np
 import pandas as pd
 from database import Database
-from sklearn import preprocessing
+from utils import Encoder
 
 SAVED_MODEL_PATH = "model_files/house_price_predictor.pkl"
 SAVED_LABEL_ENCODER_PATH = "model_files/label_encoder.pkl"
@@ -19,9 +19,14 @@ app = Flask(__name__)
 db = Database()
 
 
-def __process_input(request_data: list) -> pd.DataFrame:
-    """
-    Transforms the provided JSON to a Pandas DataFrame
+def __process_input(request_data: json) -> pd.DataFrame:
+    """Transforms the provided JSON to a Pandas DataFrame
+
+    Args:
+        request_data (json): Input JSON to be transformed
+
+    Returns:
+        pd.DataFrame: Input DataFrame
     """
     return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
 
