@@ -85,3 +85,4 @@ with open("model_files/test_labels.pkl", "wb") as f:
 # Saving LabelEncoder object for input encoding and output decoding
 with open("model_files/label_encoder.pkl", "wb") as f:
     pickle.dump(label_object, f)
+    
