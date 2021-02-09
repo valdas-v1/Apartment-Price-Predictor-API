@@ -44,6 +44,11 @@ Aruodas.lt Apartment Price Predictor API uses a number of open source projects t
     $ pip install -r requirements.txt
     ```
 
+5) Update database connection credentials in [database.py](database.py)
+    ```python
+    self.engine = create_engine(YOUR_DATABASE_URI)
+    ```
+
 ## Running the API
 Run the API as any other Python file
 ```sh
