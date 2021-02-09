@@ -28,71 +28,34 @@ def __process_input(request_data: json) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Input DataFrame
     """
+
     return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
 
 
-def __encode_input(data: pd.DataFrame) -> pd.DataFrame:
+def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
     """
     Encodes categorical values in input DataFrame to numerical labels
 
     Args:
-        data (pd.DataFrame): Input DataFrame to be encoded
+        df (pd.DataFrame): Input DataFrame to be encoded
 
     Returns:
         pd.DataFrame: Encoded DataFrame
     """
-    data = data.astype(
-        {
-            "Area": "float64",
-            "Build year": "int64",
-            "Floor": "int64",
-            "No. of floors": "int64",
-            "Renovation year": "int64",
-            "Number of rooms": "int64",
-        }
-    )
 
-    encoded_data = data[
-        [
-            "Area",
-            "Build year",
-            "Floor",
-            "No. of floors",
-            "Number of rooms",
-            "Renovation year",
-        ]
-    ]
+    # Create Encoder object with the input DataFrame
+    encoder = Encoder(df)
 
-    # Categorical data to be encoded
-    categorical_data = data[
-        [
-            "Building type",
-            "Equipment",
-            "Heating system",
-            "city",
-            "region",
-            "street",
-        ]
-    ]
+    # Changing data type of numerical data
+    encoder.change_numeric_type()
 
-    # Encoding categorical data with Scikit-Learn LabelEncoder
-    categorical_columns = [
-        "Building type",
-        "Equipment",
-        "Heating system",
-        "city",
-        "region",
-        "street",
-    ]
-
-    try:
-        for col in categorical_columns:
-            categorical_data[col] = le[col].transform(categorical_data[col])
-    except Exception as error:
-        return json.dumps({"error": str(error)}), 400
+    # Encoding with an existing LabelEncoder dictionary
+    encoder.encode(le)
 
     # Joining encoded numerical and categorical data
-    return encoded_data.join(categorical_data)
+    encoder.join_encoded()
+
+    return encoder.encoded_df
 
 
 @app.route("/predict", methods=["POST"])

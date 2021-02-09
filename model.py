@@ -20,21 +20,13 @@ encoder.create_labelencoder_dict()
 # Joining encoded numerical and categorical data
 encoder.join_encoded()
 
-# Spliting the data and training a Gradient Boosting Regressor model
-X_train, X_test, y_train, y_test = train_test_split(
-    encoder.encoded_df, encoder.df["price"], test_size=0.1
-)
+# Training a Gradient Boosting Regressor model
 clf = GradientBoostingRegressor()
-clf.fit(X_train, y_train)
+clf.fit(encoder.encoded_df, encoder.df["price"])
 
-# Saving the model and testing data to separate files
+# Saving the model to a file
 with open("model_files/house_price_predictor.pkl", "wb") as f:
     pickle.dump(clf, f)
-with open("model_files/test_data.pkl", "wb") as f:
-    pickle.dump(X_test, f)
-with open("model_files/test_labels.pkl", "wb") as f:
-    pickle.dump(y_test, f)
-
 
 # Saving LabelEncoder object for input encoding and output decoding
 with open("model_files/label_encoder.pkl", "wb") as f:
