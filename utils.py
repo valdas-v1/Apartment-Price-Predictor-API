@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn import preprocessing
 import json
 
+pd.options.mode.chained_assignment = None
+
 
 class Encoder:
     """Encoder class with methods to encode new values or with an existing LabelEncoder dictionary"""
@@ -51,8 +53,23 @@ class Encoder:
 
         self.encoded_df[self.numerical_columns] = self.df[self.numerical_columns]
 
+    def rename_rare(self):
+        """Renames rare categorical values to 'None' to simplify predictions and deal with new unseen values"""
+        for col in self.categorical_columns:
+            self.df[f"{col} count"] = self.df[col].apply(
+                lambda x: (self.df[col] == x).sum()
+            )
+            self.df[col][self.df[f"{col} count"] < 5] = "None"
+            self.df = self.df.drop(f"{col} count", axis=1)
+
     def create_labelencoder_dict(self):
         """Creates a LabelEncoder object and encodes the categorical columns"""
+
+        # Adding an extra row with only 'None' values to be able to later encode them despite not having them in the original dataset
+        none_val = self.df[self.categorical_columns].iloc[0]
+        none_val[self.categorical_columns] = "None"
+        self.categorical_values = self.categorical_values.append(none_val)
+
         self.label_object = {}
 
         # Iterates though each column creating a new label encoder and encoding the values
@@ -64,20 +81,30 @@ class Encoder:
             )
             self.label_object[col] = labelencoder
 
+        # Removing the extra 'None' row
+        self.categorical_values = self.categorical_values.iloc[:-1]
+
     def join_encoded(self):
         """Joins the encoded numerical and categorical data into a final DataFrame"""
         self.encoded_df = self.encoded_df.join(self.categorical_values)
 
     def encode(self, le: dict):
-        """Encodes DataFrame with an existing LabelEncoder dictionary
+        """Encodes DataFrame with an existing LabelEncoder dictionary or replaces unseen value with 'None'
 
         Args:
             le (dict): LabelEncoder dictionary
         """
-        try:
-            for col in self.categorical_columns:
+        for col in self.categorical_columns:
+            try:
                 self.categorical_values[col] = le[col].transform(
                     self.categorical_values[col]
                 )
-        except Exception as error:
-            return json.dumps({"error": str(error)}), 400
+            # Triggers if trying to encode an unseen value
+            except ValueError:
+                self.categorical_values[col] = "None"
+
+                self.categorical_values[col] = le[col].transform(
+                    self.categorical_values[col]
+                )
+            except Exception as error:
+                return json.dumps({"error": str(error)}), 400

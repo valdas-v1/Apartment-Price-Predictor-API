@@ -14,6 +14,9 @@ encoder = Encoder(df)
 # Changing data type of numerical data
 encoder.change_numeric_type()
 
+# Renaming rare categorical values to simplify predictions and deal with new unseen values
+encoder.rename_rare()
+
 # Creating a LabelEncoder object for all columns
 encoder.create_labelencoder_dict()
 
