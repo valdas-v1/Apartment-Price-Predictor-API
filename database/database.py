@@ -16,7 +16,7 @@ class Database:
         self.conn = self.engine.raw_connection()
         self.cur = self.conn.cursor()
 
-    def push_dataframe_to_db(self, table_name: str, table_data: pd.DataFrame):
+    def push_dataframe_to_db(self, table_name: str, table_data: pd.DataFrame) -> None:
 
         """
         Uploads the provided DataFrame to the database. Read more on the method used:

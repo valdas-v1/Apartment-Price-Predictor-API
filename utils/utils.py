@@ -35,7 +35,7 @@ class Encoder:
 
         self.categorical_values = self.df[self.categorical_columns]
 
-    def change_numeric_type(self):
+    def change_numeric_type(self) -> None:
         """Changes the type of numerical values to numerical data types"""
         self.df = self.df.astype(
             {
@@ -53,7 +53,7 @@ class Encoder:
 
         self.encoded_df[self.numerical_columns] = self.df[self.numerical_columns]
 
-    def rename_rare(self):
+    def rename_rare(self) -> None:
         """Renames rare categorical values to 'None' to simplify predictions and deal with new unseen values"""
         for col in self.categorical_columns:
             self.df[f"{col} count"] = self.df[col].apply(
@@ -62,7 +62,7 @@ class Encoder:
             self.df[col][self.df[f"{col} count"] < 5] = "None"
             self.df = self.df.drop(f"{col} count", axis=1)
 
-    def create_labelencoder_dict(self):
+    def create_labelencoder_dict(self) -> None:
         """Creates a LabelEncoder object and encodes the categorical columns"""
 
         # Adding an extra row with only 'None' values to be able to later encode them despite not having them in the original dataset
@@ -84,11 +84,11 @@ class Encoder:
         # Removing the extra 'None' row
         self.categorical_values = self.categorical_values.iloc[:-1]
 
-    def join_encoded(self):
+    def join_encoded(self) -> None:
         """Joins the encoded numerical and categorical data into a final DataFrame"""
         self.encoded_df = self.encoded_df.join(self.categorical_values)
 
-    def encode(self, le: dict):
+    def encode(self, le: dict) -> None:
         """Encodes DataFrame with an existing LabelEncoder dictionary or replaces unseen value with 'None'
 
         Args:
@@ -106,5 +106,5 @@ class Encoder:
                 self.categorical_values[col] = le[col].transform(
                     self.categorical_values[col]
                 )
-            except Exception as error:
-                return json.dumps({"error": str(error)}), 400
+            except Exception:
+                return json.dumps({"error": 'Encoder error'}), 500

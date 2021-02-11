@@ -59,7 +59,7 @@ def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
 
 
 @app.route("/predict", methods=["POST"])
-def predict() -> list:
+def predict() -> json:
     """
     Takes encoded data about a house and makes a price prediction with a pretrained model.
     Can accept as many house inputs as provided
@@ -67,24 +67,27 @@ def predict() -> list:
     input_params = __encode_input(__process_input(request.data))
     try:
         predictions = classifier.predict(input_params)
-    except Exception as error:
-        return json.dumps({"error": str(error)}), 400
+    except Exception:
+        return json.dumps({"error": 'Prediction error'}), 500
 
     # If prediction is successful, add prediction to database
-    prediction_data = __process_input(request.data)
-    prediction_data["predicted price"] = predictions
-    db.push_dataframe_to_db("predictions", prediction_data)
+    try:
+        prediction_data = __process_input(request.data)
+        prediction_data["predicted price"] = predictions
+        db.push_dataframe_to_db("predictions", prediction_data)
+    except:
+        pass
 
     return json.dumps({"predicted_prices": predictions.tolist()})
 
 
 @app.route("/recent_predictions", methods=["GET"])
-def recent_predictions() -> list:
+def recent_predictions() -> json:
     """
     Returns last 10 predictions from the database
 
     Returns:
-        list: last 10 predictions
+        json: last 10 predictions
     """
     try:
         cols = [
@@ -109,8 +112,8 @@ def recent_predictions() -> list:
             recent_predictions.append(dict(zip(cols, prediction)))
         return json.dumps(recent_predictions, indent=4, ensure_ascii=False)
 
-    except Exception as error:
-        return json.dumps({"error": str(error)}), 400
+    except Exception:
+        return json.dumps({"error": 'Error loading recent predictions from database'}), 500
 
 
 if __name__ == "__main__":

@@ -28,9 +28,9 @@ clf = GradientBoostingRegressor()
 clf.fit(encoder.encoded_df, encoder.df["price"])
 
 # Saving the model to a file
-with open("model_files/house_price_predictor.pkl", "wb") as f:
+with open("house_price_predictor.pkl", "wb") as f:
     pickle.dump(clf, f)
 
 # Saving LabelEncoder object for input encoding and output decoding
-with open("model_files/label_encoder.pkl", "wb") as f:
+with open("label_encoder.pkl", "wb") as f:
     pickle.dump(encoder.label_object, f)
