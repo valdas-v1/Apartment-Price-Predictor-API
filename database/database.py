@@ -51,7 +51,7 @@ class Database:
         """
 
         self.cur.execute(
-            f"""
+        f"""
         SELECT * FROM predictions LIMIT {n} OFFSET (SELECT count(*) FROM predictions)-{n};
         """
         )
