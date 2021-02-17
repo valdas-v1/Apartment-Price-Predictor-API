@@ -19,7 +19,7 @@ app = Flask(__name__)
 db = Database()
 
 
-def __process_input(request_data: json) -> pd.DataFrame:
+def __process_input(request_data: str) -> pd.DataFrame:
     """Transforms the provided JSON to a Pandas DataFrame
 
     Args:
@@ -61,7 +61,7 @@ def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
 
 
 @app.route("/predict", methods=["POST"])
-def predict() -> json:
+def predict() -> str:
     """
     Takes encoded data about a house and makes a price prediction with a pretrained model.
     Can accept as many house inputs as provided
@@ -84,12 +84,12 @@ def predict() -> json:
 
 
 @app.route("/recent_predictions", methods=["GET"])
-def recent_predictions() -> json:
+def recent_predictions() -> str:
     """
     Returns last 10 predictions from the database
 
     Returns:
-        json: last 10 predictions
+        str: last 10 predictions
     """
     try:
         cols = [
