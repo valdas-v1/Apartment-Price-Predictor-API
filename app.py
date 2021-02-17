@@ -28,8 +28,10 @@ def __process_input(request_data: json) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Input DataFrame
     """
-
-    return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
+    try:
+        return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
+    except Exception:
+        return json.dumps({"error": 'Prediction error'}), 500
 
 
 def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
