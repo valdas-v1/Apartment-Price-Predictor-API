@@ -11,19 +11,14 @@ df = df.drop_duplicates().reset_index()
 # Creating an Encoder object with the data
 encoder = Encoder(df)
 
-# Changing data type of numerical data
 encoder.change_numeric_type()
 
-# Renaming rare categorical values to simplify predictions and deal with new unseen values
 encoder.rename_rare()
 
-# Creating a LabelEncoder object for all columns
 encoder.create_labelencoder_dict()
 
-# Joining encoded numerical and categorical data
 encoder.join_encoded()
 
-# Training a Gradient Boosting Regressor model
 clf = GradientBoostingRegressor()
 clf.fit(encoder.encoded_df, encoder.df["price"])
 

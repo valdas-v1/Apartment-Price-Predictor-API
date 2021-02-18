@@ -99,7 +99,7 @@ class Encoder:
                 self.categorical_values[col] = le[col].transform(
                     self.categorical_values[col]
                 )
-            # Triggers if trying to encode an unseen value
+            # Triggers if trying to encode a rare value
             except ValueError:
                 self.categorical_values[col] = "None"
 

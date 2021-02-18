@@ -11,7 +11,6 @@ class Database:
     """
 
     def __init__(self):
-        # Remote database connection
         self.engine = create_engine(os.environ["HEROKU_DB_24"])
         self.conn = self.engine.raw_connection()
         self.cur = self.conn.cursor()

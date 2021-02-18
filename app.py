@@ -9,7 +9,6 @@ from utils import Encoder, process_input
 SAVED_MODEL_PATH = "model_files/house_price_predictor.pkl"
 SAVED_LABEL_ENCODER_PATH = "model_files/label_encoder.pkl"
 
-# Loading the classifier and label encoder from file
 with open(SAVED_MODEL_PATH, "rb") as f:
     classifier = pickle.load(f)
 with open(SAVED_LABEL_ENCODER_PATH, "rb") as f:
@@ -33,13 +32,10 @@ def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
     # Create Encoder object with the input DataFrame
     encoder = Encoder(df)
 
-    # Changing data type of numerical data
     encoder.change_numeric_type()
 
-    # Encoding with an existing LabelEncoder dictionary
     encoder.encode(le)
 
-    # Joining encoded numerical and categorical data
     encoder.join_encoded()
 
     return encoder.encoded_df
@@ -51,19 +47,19 @@ def predict() -> str:
     Takes encoded data about a house and makes a price prediction with a pretrained model.
     Can accept as many house inputs as provided
     """
-    input_params = __encode_input(process_input(request.data))
+    prediction_data = process_input(request.data)
+    input_params = __encode_input(prediction_data)
     try:
         predictions = classifier.predict(input_params)
     except Exception as error:
         return json.dumps({"error": "Prediction error"}), 500
-
-    # If prediction is successful, add prediction to database
-    try:
-        prediction_data = process_input(request.data)
-        prediction_data["predicted price"] = predictions
-        db.push_dataframe_to_db("predictions", prediction_data)
-    except:
-        pass
+    else:
+        # If prediction is successful, add prediction to database
+        try:
+            prediction_data["predicted price"] = predictions
+            db.push_dataframe_to_db("predictions", prediction_data)
+        except:
+            pass
 
     return json.dumps({"predicted_prices": predictions.tolist()})
 
@@ -94,7 +90,7 @@ def recent_predictions() -> str:
         ]
         recent_predictions = []
 
-        # Iterate through predictions and form dictionaries, which are later combined to a JSON
+        # Iterate through predictions and form dictionaries
         for prediction in db.get_requests_and_responses(10):
             recent_predictions.append(dict(zip(cols, prediction)))
         return json.dumps(recent_predictions, indent=4, ensure_ascii=False)
