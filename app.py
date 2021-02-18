@@ -4,7 +4,7 @@ from flask import Flask, request
 import numpy as np
 import pandas as pd
 from database import Database
-from utils import Encoder
+from utils import Encoder, process_input
 
 SAVED_MODEL_PATH = "model_files/house_price_predictor.pkl"
 SAVED_LABEL_ENCODER_PATH = "model_files/label_encoder.pkl"
@@ -17,21 +17,6 @@ with open(SAVED_LABEL_ENCODER_PATH, "rb") as f:
 
 app = Flask(__name__)
 db = Database()
-
-
-def __process_input(request_data: str) -> pd.DataFrame:
-    """Transforms the provided JSON to a Pandas DataFrame
-
-    Args:
-        request_data (json): Input JSON to be transformed
-
-    Returns:
-        pd.DataFrame: Input DataFrame
-    """
-    try:
-        return pd.DataFrame.from_dict(json.loads(request.data)["inputs"])
-    except Exception:
-        return json.dumps({"error": 'Prediction error'}), 500
 
 
 def __encode_input(df: pd.DataFrame) -> pd.DataFrame:
@@ -66,15 +51,15 @@ def predict() -> str:
     Takes encoded data about a house and makes a price prediction with a pretrained model.
     Can accept as many house inputs as provided
     """
-    input_params = __encode_input(__process_input(request.data))
+    input_params = __encode_input(process_input(request.data))
     try:
         predictions = classifier.predict(input_params)
-    except Exception:
-        return json.dumps({"error": 'Prediction error'}), 500
+    except Exception as error:
+        return json.dumps({"error": "Prediction error"}), 500
 
     # If prediction is successful, add prediction to database
     try:
-        prediction_data = __process_input(request.data)
+        prediction_data = process_input(request.data)
         prediction_data["predicted price"] = predictions
         db.push_dataframe_to_db("predictions", prediction_data)
     except:
@@ -114,8 +99,11 @@ def recent_predictions() -> str:
             recent_predictions.append(dict(zip(cols, prediction)))
         return json.dumps(recent_predictions, indent=4, ensure_ascii=False)
 
-    except Exception:
-        return json.dumps({"error": 'Error loading recent predictions from database'}), 500
+    except Exception as error:
+        return (
+            json.dumps({"error": "Error loading recent predictions from database"}),
+            500,
+        )
 
 
 if __name__ == "__main__":

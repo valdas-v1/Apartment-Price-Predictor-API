@@ -106,5 +106,20 @@ class Encoder:
                 self.categorical_values[col] = le[col].transform(
                     self.categorical_values[col]
                 )
-            except Exception:
-                return json.dumps({"error": 'Encoder error'}), 500
+            except Exception as error:
+                return json.dumps({"error": "Encoder error"}), 500
+
+
+def process_input(request_data: str) -> pd.DataFrame:
+    """Transforms the provided JSON to a Pandas DataFrame
+
+    Args:
+        request_data (json): Input JSON to be transformed
+
+    Returns:
+        pd.DataFrame: Input DataFrame
+    """
+    try:
+        return pd.DataFrame.from_dict(json.loads(request_data)["inputs"])
+    except Exception as error:
+        return json.dumps({"error": "Invalid input"}), 500
